@@ -13,7 +13,7 @@ echo "Invoke your program with the \$CALCULATOR variable; an example is below"
 
 
 # Test 01: Ensure the program runs without error with a simple, valid invocation.
-if !$CALCULATOR 1 + 1; then #If return code is nonzero
+if ! $CALCULATOR 1 + 1; then #If return code is nonzero
   echo 'ERROR! A valid run of the calculator (1 + 1) failed!'
   exit 1
 fi
