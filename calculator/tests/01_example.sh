@@ -13,7 +13,7 @@ echo "Invoke your program with the \$CALCULATOR variable; an example is below"
 
 
 # Test 01: Ensure the program runs without error with a simple, valid invocation.
-if ! $CALCULATOR 1 + 1; then  # If the return code of $PROGRAM is non-zero (i.e. error)...
+if !$CALCULATOR 1 + 1; then #If return code is nonzero
   echo 'ERROR! A valid run of the calculator (1 + 1) failed!'
   exit 1
 fi
@@ -29,3 +29,28 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+#My added tests
+#Test 04: Ensure add with larger numbers produces correct output
+if [[ $($CALCULATOR 34 +26) -ne 60 ]]; then
+  echo 'ERROR! A valid run of the calculator (34 + 26) failed to produce 60 as an output!'
+  exit 1
+fi
+
+#Test 05: Ensure simple subtraction case has correct output
+if [[ $($CALCULATOR 5 - 2) -ne 3 ]];then 
+  echo 'ERROR! A valid run of the calculator (5 - 3) failed to produce 3 as an output!'
+  exit 1
+fi
+
+#Test 06: Ensure simple multiplication case has correct output
+if [[ $($CALCULATOR 2 * 3) -ne 6 ]]; then
+  echo 'ERROR!, A valid run of the calculator (2 * 3) failed to produce 6 as an output!'
+  exit 1
+fi
+
+#Test 07: Ensure simple division case has correct output
+if [[ $($CALCULATOR 4 / 2) -ne 2 ]];then 
+  echo 'ERROR! A valid run of the calculator (4 / 2) failed to produce 2 as an output!'
+  exit 1
+fi`
