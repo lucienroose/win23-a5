@@ -44,7 +44,7 @@ if [[ $($CALCULATOR 5 - 2) -ne 3 ]];then
 fi
 
 #Test 06: Ensure simple multiplication case has correct output
-if [[ $($CALCULATOR 2 * 3) -ne 6 ]]; then
+if [[ $($CALCULATOR 2 '*' 3) -ne 6 ]]; then
   echo 'ERROR!, A valid run of the calculator (2 * 3) failed to produce 6 as an output!'
   exit 1
 fi
