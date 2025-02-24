@@ -32,7 +32,7 @@ fi
 
 #My added tests
 #Test 04: Ensure add with larger numbers produces correct output
-if [[ $($CALCULATOR 34 +26) -ne 60 ]]; then
+if [[ $($CALCULATOR 34 + 26) -ne 60 ]]; then
   echo 'ERROR! A valid run of the calculator (34 + 26) failed to produce 60 as an output!'
   exit 1
 fi
